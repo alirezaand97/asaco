@@ -1,0 +1,13 @@
+{
+  "isSignUp": "Have not registered before?",
+  "loading": "loading... please wait",
+  "searchProduct": "search in products...",
+  "landingTitle": "minimal mens style",
+  "landingDescription": "Everybody is different, which is why we offer styles for every body.",
+  "about": "Minimal Style Online Shopping Center started its activity in the field of clothing in a specialized way in 2014 and during these years, while cooperating with more than 400 Iranian and international brands, has taken steps to improve the online clothing shopping experience in Iran. The most important mission of the founder is to improve the quality of life, which is confirmed by the satisfaction of the majority of dear customers of this online store; Satisfaction that is a solid support for the realization of other long-term goals.",
+  "newsletterTitle": "GET UPDATE FROM ANYWHERE   ",
+  "newsletterDesc": "Bearing Void gathering light light his eavening unto dont afraid ",
+  "requireMessage": "this field is required",
+  "minLengthError": " min length of {{field}} is {{min}} character ",
+  "incorrectFormat": "{{field}} format is incorrect."
+}

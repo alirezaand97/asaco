@@ -1,0 +1,18 @@
+{
+  "siteName": "ECommerce",
+  "loginTitle": "welcome to Asa Co.  ",
+  "email": "email",
+  "password": "password",
+  "login": "login",
+  "signUp": " signup ",
+  "home": "home",
+  "electronics": "electronics",
+  "men's clothing": "men's clothing",
+  "women's clothing": "women's clothing",
+  "jewelery": "jewelery",
+  "landingCTA": "Buy now",
+  "send": "send",
+  "date":"data",
+  "mobile":"mobile"
+
+}

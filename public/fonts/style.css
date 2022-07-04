@@ -1,0 +1,27 @@
+@font-face {
+  font-family: YekanBakh;
+  src: url(/fonts/YekanBakh/eot/YekanBakhFa04Regular.eot);
+  src: url(/fonts/YekanBakh/eot/YekanBakhFa04Regular.eot)
+    format("embedded-opentype");
+  src: url(/fonts/YekanBakh/ttf/YekanBakhFa04Regular.ttf) format("truetype");
+}
+@font-face {
+  font-family: YekanBakhMedium;
+  src: url(/fonts/YekanBakh/eot/YekanBakhFa-En05Medium.eot);
+  src: url(/fonts/YekanBakh/eot/YekanBakhFa-En05Medium.eot)
+    format("embedded-opentype");
+  src: url(/fonts/YekanBakh/ttf/YekanBakhFa-En05Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: YekanBakhBold;
+  src: url(/fonts/YekanBakh/eot/YekanBakhFa-En06Bold.eot);
+  src: url(/fonts/YekanBakh/eot/YekanBakhFa-En06Bold.eot)
+    format("embedded-opentype");
+  src: url(/fonts/YekanBakh/ttf/YekanBakhFa-En06Bold.ttf) format("truetype");
+}
+
+body {
+  font-family: YekanBakh !important;
+}
+
+

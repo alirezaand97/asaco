@@ -1,0 +1,33 @@
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+.swiper-button-prev,
+.swiper-button-next {
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    width: 2.375rem;
+    height: 2.375rem;
+    position: absolute;
+    top: 0;
+    align-items: center;
+    border-radius: 0.5625rem;
+    justify-content: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+
+}
+.swiper-button-prev{
+  right: calc(100% - 5.75rem) !important;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1rem;
+    color: #131b1f;
+    font-weight: bold;
+}
+
+.swiper{
+  padding-top: 3rem;
+}
