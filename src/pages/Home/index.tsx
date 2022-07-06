@@ -5,6 +5,7 @@ import ProductSlider from "components/Product/ProductSlider";
 import { useGetProductsQuery } from "store/services/products";
 import { useGetBannersQuery } from "store/services/general";
 import OfferBanner from "components/Home/OfferBanner";
+import MainLayout from "components/layouts/MainLayput";
 const Home = () => {
   const {
     data: products,
@@ -16,7 +17,7 @@ const Home = () => {
   const { data: banners } = useGetBannersQuery();
 
   return (
-    <>
+    <MainLayout className="mt-24">
       <LandingHeader />
       <div className=" container">
         <ProductSlider
@@ -30,7 +31,7 @@ const Home = () => {
         {banners && <OfferBanner banners={banners} className="mt-20" />}
         <NewsLetterRegister />
       </div>
-    </>
+    </MainLayout>
   );
 };
 

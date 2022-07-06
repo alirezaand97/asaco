@@ -23,19 +23,18 @@ const SearchInput = () => {
         >
           {({ handleChange, handleSubmit, values, errors }) => (
             <>
-              <button
-                onClick={() => handleSearch(values.search)}
-                className="absolute right-2 top-1/2 -translate-y-1/2"
-              >
-                <SearchIcon sx={{ color: "#c8cacd" }} />
-              </button>
-
               <IInput
                 type="text"
                 name="search"
                 placeholder={t("searchProduct")}
                 className="block w-full  px-10  "
               />
+               <button
+                onClick={() => handleSearch(values.search)}
+                className="absolute right-2 top-1/2 -translate-y-1/2"
+              >
+                <SearchIcon  />
+              </button>
             </>
           )}
         </Formik>

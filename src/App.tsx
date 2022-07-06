@@ -26,10 +26,8 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path={routes.home.index} element={<MainLayout />}>
-            <Route index element={<Home />} />
-            <Route path={routes.login} element={<Login />} />
-          </Route>
+          <Route path={routes.home.index} element={<Home />} />
+          <Route path={routes.login} element={<Login />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

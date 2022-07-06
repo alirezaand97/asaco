@@ -6,7 +6,9 @@ import NavBar from "./NavBar";
 import SearchInput from "./SearchInput";
 import { useTranslation } from "react-i18next";
 import IButton from "components/general/IButton";
-import PersonIcon from "@mui/icons-material/Person";
+import { default as UserIcon } from "@mui/icons-material/PersonOutlined";
+import { default as HeadrtIcon } from "@mui/icons-material/FavoriteBorderOutlined";
+import { default as CartIcon } from "@mui/icons-material/LocalMallOutlined";
 const Header = () => {
   const { t } = useTranslation();
 
@@ -16,18 +18,29 @@ const Header = () => {
         <div className="w-10/12 flex h-10">
           <Link to={routes.login}>
             <IButton
-              className=" bg-grayLight hover:bg-grayLight text-primary"
-              icon={<PersonIcon fontSize="small" />}
+              className=" bg-primaryLight  text-secondary"
+              icon={<UserIcon fontSize="medium" />}
+            />
+          </Link>
+          <Link to="/" className="mx-2">
+            <IButton
+              className=" bg-primaryLight  text-secondary"
+              icon={<HeadrtIcon fontSize="medium" />}
+            />
+          </Link>
+          <Link to="/" className="mx-2">
+            <IButton
+              className=" bg-primary  text-white"
+              icon={<CartIcon fontSize="medium" />}
             >
-              {t("login")}
+              سبد خرید
             </IButton>
           </Link>
           <NavBar />
           <SearchInput />
         </div>
         <div className="w-2/12 flex items-center justify-end">
-          <ToggleLanguage />
-        
+          {/* <ToggleLanguage /> */}
         </div>
       </div>
     </div>

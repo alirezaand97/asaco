@@ -1,7 +1,11 @@
 const convertToPersianDigit = (n: any) => {
   const farsiDigits = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
-
-  return n.toString().replace(/\d/g, (x: any) => farsiDigits[x]);
+  if (n) {
+    return n
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      .replace(/\d/g, (x: any) => farsiDigits[x]);
+  }
 };
 
 export default convertToPersianDigit;

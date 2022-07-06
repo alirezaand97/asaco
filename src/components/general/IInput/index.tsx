@@ -23,7 +23,7 @@ const IInput = ({
           meta.error
             ? "border-red-500 placeholder:text-red-500 focus:border-red-500"
             : ""
-        } flex items-center h-12 px-4 w-full text-right ltr:text-left border focus:border-secondary  placeholder:text-sm rounded-md  focus:bg-white  focus:shadow-md focus:outline-none   placeholder:ltr:text-left
+        } flex items-center h-12 px-4 w-full text-right ltr:text-left border focus:border-primary  placeholder:text-sm rounded-md  focus:bg-white  focus:shadow-md focus:outline-none   placeholder:ltr:text-left
         ${className}
         `}
       />

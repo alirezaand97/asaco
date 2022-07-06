@@ -2,14 +2,22 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-
-const MainLayout = ({ showHeader = true, showFooter = true }) => {
+interface Props {
+  showHeader?: boolean;
+  showFooter?: boolean;
+  children?: any;
+  className?: string;
+}
+const MainLayout = ({
+  showHeader = true,
+  showFooter = true,
+  className,
+  ...props
+}: Props) => {
   return (
     <div>
       {showHeader && <Header />}
-      <div className="mt-24">
-        <Outlet />
-      </div>
+      <div className={className}>{props.children}</div>
       {showFooter && <Footer />}
     </div>
   );

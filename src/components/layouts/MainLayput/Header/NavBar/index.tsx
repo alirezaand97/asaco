@@ -9,7 +9,7 @@ const NavBar = () => {
   return (
     <div className="flex justify-center items-center mx-8">
       {headerItems.map((item, index) => (
-        <div key={index} className="mx-4 text-md hover:text-blue-700">
+        <div key={index} className="mx-4 text-md hover:text-primary">
           <NavLink to={item.url}>{t(item.title)}</NavLink>
         </div>
       ))}

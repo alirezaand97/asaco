@@ -28,7 +28,7 @@ const ProductSlider: React.FC<ProductSliderInterface> = (props) => {
       {title && <IHeader className="md:absolute right-0 ">{title} </IHeader>}
       {hasMore && (
         <Link to={hasMoreLink}>
-          <IButton className="border border-grayBorder text-primary text-sm absolute left-28 h-10">
+          <IButton className="border border-grayBorder text-secondary text-sm absolute left-28 h-10">
             مشاهده بیشتر
           </IButton>
         </Link>
