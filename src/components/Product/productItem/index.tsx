@@ -41,25 +41,28 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
           className="h-productImg w-productImg"
         />
       </div>
+      {discount ? (
+        <IBadge className="absolute top-0 left-0 rounded-md w-8 h-8">
+          {persianDigit(discount)}٪
+        </IBadge>
+      ) : null}
       <div className="w-full px-6 pt-4">
         <h3 className="truncate text-md">{title}</h3>
-        <div className="w-full flex justify-end pt-2">
-          {discount && (
-            <IBadge className="absolute top-0 left-0 rounded-md w-8 h-8">
-              {persianDigit(discount)}٪
-            </IBadge>
-          )}
+        <div className="w-full flex  pt-2 justify-between items-center">
           <div className="text-lg font-yekanBold">
-            {persianDigit(price)}
+            {discount
+              ? persianDigit(withDiscount(price, discount))
+              : persianDigit(price)}
             <span className="text-xs px-1 font-yekan">تومان</span>
           </div>
+          {discount ? (
+            <div className="pt-1 text-left text-xs text-slate-400 line-through">
+              {persianDigit(withDiscount(price, discount))}
+              <span className="text-xs px-1 font-yekan">تومان</span>
+            </div>
+          ) : null}
         </div>
-        {discount && (
-          <div className="pt-1 text-left text-xs text-slate-400 line-through">
-            {persianDigit(withDiscount(price, discount))}
-            <span className="text-xs px-1 font-yekan">تومان</span>
-          </div>
-        )}
+
         {hasAction && (
           <div className="pt-4 flex justify-center">
             <Link to="/" className="mx-2">

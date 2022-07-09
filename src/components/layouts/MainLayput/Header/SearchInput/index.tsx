@@ -14,7 +14,7 @@ const SearchInput = () => {
 
   return (
     <div className=" flex justify-center items-center mx-8 h-full flex-1">
-      <div className="relative w-3/4 lg:w-full xl:w-3/4 h-full">
+      <div className="relative w-full">
         <Formik
           initialValues={{
             search: "",

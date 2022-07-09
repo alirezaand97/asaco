@@ -17,29 +17,50 @@ interface ProductSliderInterface {
   isLoading?: boolean;
   hasMore?: boolean;
   hasMoreLink?: string;
-  className?:string
+  className?: string;
+  textColor?: string;
+  hasFixItem?: boolean;
+  fixItem?: React.ReactNode;
 }
 
 const ProductSlider: React.FC<ProductSliderInterface> = (props) => {
-  const { products, title, hasMore = true, hasMoreLink = "/" ,className} = props;
+  const {
+    products,
+    title,
+    hasMore = true,
+    hasMoreLink = "/",
+    className,
+    textColor,
+    hasFixItem,
+    fixItem,
+  } = props;
 
   return (
     <div className={`w-full relative ${className}`}>
-      {title && <IHeader className="md:absolute right-0 ">{title} </IHeader>}
-      {hasMore && (
-        <Link to={hasMoreLink}>
-          <IButton className="border border-grayBorder text-secondary text-sm absolute left-28 h-10">
-            مشاهده بیشتر
-          </IButton>
-        </Link>
-      )}
-      <Swiper {...sliderConfig} modules={[Navigation]}>
-        {products?.map((product) => (
-          <SwiperSlide>
-            <ProductItem product={product} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="flex justify-between items-center pl-28 pr-3 absolute w-full">
+        {title && <IHeader className={`  ${textColor}`}>{title} </IHeader>}
+        {hasMore && (
+          <Link to={hasMoreLink}>
+            <IButton
+              className={`border border-grayBorder text-sm h-10 ${textColor}`}
+            >
+              مشاهده بیشتر
+            </IButton>
+          </Link>
+        )}
+      </div>
+      <div className="flex w-full ">
+        {hasFixItem && fixItem}
+        <div className={`${hasFixItem ? "w-5/6" : "w-full"}`}>
+          <Swiper {...sliderConfig} modules={[Navigation]}>
+            {products?.map((product) => (
+              <SwiperSlide>
+                <ProductItem product={product} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
     </div>
   );
 };

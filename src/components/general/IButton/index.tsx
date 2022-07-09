@@ -1,5 +1,4 @@
-import { color } from "@mui/system";
-import React, { FC, useEffect, useState, ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes } from "react";
 
 interface Props extends ButtonHTMLAttributes<{}> {
   className?: string;

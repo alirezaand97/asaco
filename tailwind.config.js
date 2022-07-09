@@ -25,9 +25,11 @@ module.exports = {
       },
       width: {
         productImg: "220px",
+        logo:"150px"
       },
       height: {
         productImg: "220px",
+      
       },
     },
   },

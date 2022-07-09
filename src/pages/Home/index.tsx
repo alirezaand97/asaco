@@ -6,6 +6,8 @@ import { useGetProductsQuery } from "store/services/products";
 import { useGetBannersQuery } from "store/services/general";
 import OfferBanner from "components/Home/OfferBanner";
 import MainLayout from "components/layouts/MainLayput";
+import SpecialOfferCard from "components/general/Cards/SpecialOfferCard";
+import SliderCatCard from "components/general/Cards/SpecialOfferCard";
 const Home = () => {
   const {
     data: products,
@@ -22,13 +24,27 @@ const Home = () => {
       <div className=" container">
         <ProductSlider
           products={products}
-          title="محصولات پرفروش"
+          title=" تخفیفانه شگفت انگیز"
           hasMore={true}
           hasMoreLink="/"
           isLoading={getProductsLoading}
-          className="my-24"
+          className="my-24 bg-primary py-8 rounded-md"
+          textColor="text-white"
+          hasFixItem={true}
+          fixItem={<SpecialOfferCard className="w-1/5" />}
         />
-        {banners && <OfferBanner banners={banners} className="mt-20" />}
+        {banners && <OfferBanner banners={banners} />}
+        <ProductSlider
+          products={products}
+          title="کالاهای دیجیتال"
+          hasMore={true}
+          hasMoreLink="/"
+          isLoading={getProductsLoading}
+          className="my-24 bg-grayLight py-8 rounded-md"
+          textColor="text-secondary"
+          hasFixItem={true}
+          fixItem={<SliderCatCard className="w-1/5" />}
+        />
         <NewsLetterRegister />
       </div>
     </MainLayout>
