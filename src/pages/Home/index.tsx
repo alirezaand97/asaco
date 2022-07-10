@@ -28,7 +28,7 @@ const Home = () => {
           hasMore={true}
           hasMoreLink="/"
           isLoading={getProductsLoading}
-          className="my-24 bg-primary py-8 rounded-md"
+          className="my-12 bg-primary py-8 rounded-md"
           textColor="text-white"
           hasFixItem={true}
           fixItem={<SpecialOfferCard className="w-1/5" />}
@@ -40,7 +40,7 @@ const Home = () => {
           hasMore={true}
           hasMoreLink="/"
           isLoading={getProductsLoading}
-          className="my-24 bg-grayLight py-8 rounded-md"
+          className="my-12 bg-white py-8 rounded-md"
           textColor="text-secondary"
           hasFixItem={true}
           fixItem={<SliderCatCard className="w-1/5" />}

@@ -29,5 +29,9 @@
 }
 
 .swiper{
-  padding: 3rem 8px 8px 1rem;
+  padding: 3rem 8px 0px 8px;
+}
+
+.swiper-wrapper{
+  margin-bottom: 2rem;
 }

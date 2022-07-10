@@ -29,6 +29,7 @@ module.exports = {
       },
       height: {
         productImg: "220px",
+        landing: "700px",
       
       },
     },
