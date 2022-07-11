@@ -37,7 +37,7 @@ const ProductSlider: React.FC<ProductSliderInterface> = (props) => {
 
   return (
     <div className={`w-full relative ${className}`}>
-      <div className="flex justify-between items-center pl-28 pr-3 absolute w-full">
+      <div className="flex justify-between items-center pl-3 md:pl-28 pr-3 absolute w-full">
         {title && <IHeader className={`  ${textColor}`}>{title} </IHeader>}
         {hasMore && (
           <Link to={hasMoreLink}>
@@ -49,9 +49,9 @@ const ProductSlider: React.FC<ProductSliderInterface> = (props) => {
           </Link>
         )}
       </div>
-      <div className="flex w-full ">
+      <div className="flex w-full flex-wrap md:flex-nowrap">
         {hasFixItem && fixItem}
-        <div className={`${hasFixItem ? "w-5/6" : "w-full"}`}>
+        <div className={`${hasFixItem ? "w-full md:w-5/6" : "w-full"}`}>
           <Swiper {...sliderConfig} modules={[Navigation]}>
             {products?.map((product) => (
               <SwiperSlide>

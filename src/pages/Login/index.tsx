@@ -14,6 +14,7 @@ import LoginSchema from "validation/schemas/loginSchema";
 import { useAppDispatch } from "store";
 import IButton from "components/general/IButton";
 import MainLayout from "components/layouts/MainLayput";
+import Logo from "components/general/Logo";
 
 const Login = () => {
   const { t } = useTranslation();
@@ -36,13 +37,7 @@ const Login = () => {
     <MainLayout showFooter={false} showHeader={false}>
       <div className="container flex h-screen justify-center items-center">
         <div className="w-[384px] max-w-sm border border-border rounded-md p-8">
-          <Link to={routeNames.home}>
-            <img
-              src="Logo.png"
-              alt="زرین مارکت"
-              className="w-logo mx-auto mb-12"
-            />
-          </Link>
+          <Logo className="mx-auto mb-12" />
           <Formik
             initialValues={{
               email: "",

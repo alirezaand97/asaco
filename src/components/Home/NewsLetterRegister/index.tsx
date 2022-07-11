@@ -20,7 +20,7 @@ const NewsLetterRegister = () => {
         onSubmit={() => console.log("submit")}
       >
         {({ values }) => (
-          <div className="w-1/2 flex">
+          <div className="w-full lg:w-1/2 flex px-4">
             <IInput
               type="text"
               name="search"

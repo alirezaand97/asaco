@@ -7,7 +7,7 @@ const NavBar = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex justify-center items-center mx-8">
+    <div className="justify-start items-center h-12 hidden md:flex">
       {headerItems.map((item, index) => (
         <div key={index} className="mx-4 text-md hover:text-primary">
           <NavLink to={item.url}>{t(item.title)}</NavLink>

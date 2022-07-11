@@ -21,8 +21,11 @@ const LandingHeader = () => {
     <div
       className={`relative container flex justify-end items-center ltr:justify-start py-12`}
     >
-      <Carousel items={carouselItem} className="w-3/4 px-2" />
-      <OfferSlider products={products} className="w-1/4 px-2" />
+      <Carousel items={carouselItem} className="w-full px-2 lg:w-3/4" />
+      <OfferSlider
+        products={products}
+        className="hidden px-2 lg:w-1/4 lg:block"
+      />
     </div>
   );
 };

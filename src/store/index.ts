@@ -1,6 +1,7 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import auth from "./auth";
+import modals from "./modals";
 import service from "./services";
 
 import { setupListeners } from "@reduxjs/toolkit/query";
@@ -9,6 +10,8 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 const rootReducer = combineReducers({
   [service.reducerPath]: service.reducer,
   [auth.name]: auth.reducer,
+  [modals.name]: modals.reducer,
+
 });
 
 

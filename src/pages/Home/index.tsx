@@ -18,7 +18,7 @@ const Home = () => {
   const { data: banners } = useGetBannersQuery();
 
   return (
-    <MainLayout className="mt-24">
+    <MainLayout className="mt-44 lg:mt-32">
       <LandingHeader />
       <div className=" container">
         <ProductSlider
@@ -30,7 +30,7 @@ const Home = () => {
           className="my-12 bg-primary py-8 rounded-md"
           textColor="text-white"
           hasFixItem={true}
-          fixItem={<SpecialOfferCard className="w-1/5" />}
+          fixItem={<SpecialOfferCard className="w-full md:w-1/5" />}
         />
         {banners && <OfferBanner banners={banners} />}
         <ProductSlider
@@ -42,7 +42,7 @@ const Home = () => {
           className="my-12 bg-white py-8 rounded-md"
           textColor="text-secondary"
           hasFixItem={true}
-          fixItem={<SliderCatCard className="w-1/5" />}
+          fixItem={<SliderCatCard className="w-full md:w-1/5" />}
         />
         <NewsLetterRegister />
       </div>
