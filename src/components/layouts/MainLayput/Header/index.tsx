@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./style.css";
-import routeNames from "routers/routeNames";
 import ToggleLanguage from "./ToggleLanguage";
 import NavBar from "./NavBar";
 import SearchInput from "./SearchInput";
 import { useTranslation } from "react-i18next";
-import IButton from "components/general/IButton";
 
 import Logo from "components/general/Logo";
 import MobileDrawer from "./MobileDrawer";

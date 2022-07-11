@@ -18,7 +18,7 @@ const Home = () => {
   const { data: banners } = useGetBannersQuery();
 
   return (
-    <MainLayout className="mt-44 lg:mt-32">
+    <MainLayout className="mt-28 md:mt-36 lg:mt-32">
       <LandingHeader />
       <div className=" container">
         <ProductSlider

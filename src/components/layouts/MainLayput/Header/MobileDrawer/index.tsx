@@ -11,7 +11,6 @@ interface Props {
   setDrawerIsOpen: any;
 }
 const MobileDrawer = (props: Props) => {
-  const { drawerIsOpen, setDrawerIsOpen } = props;
   const { drawer } = useAppSelector((s) => s.modals);
   const dispatch = useAppDispatch();
   const handleToggleDrawer = () => {
