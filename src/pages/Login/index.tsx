@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import routes from "routers/routes";
+import routeNames from "routers/routeNames";
 import { useTranslation } from "react-i18next";
 import { useLoginUserMutation } from "store/services/user";
 import { setCredentials } from "store/auth";
@@ -14,7 +14,6 @@ import LoginSchema from "validation/schemas/loginSchema";
 import { useAppDispatch } from "store";
 import IButton from "components/general/IButton";
 import MainLayout from "components/layouts/MainLayput";
-import routesPath from "routers/routes";
 
 const Login = () => {
   const { t } = useTranslation();
@@ -37,7 +36,7 @@ const Login = () => {
     <MainLayout showFooter={false} showHeader={false}>
       <div className="container flex h-screen justify-center items-center">
         <div className="w-[384px] max-w-sm border border-border rounded-md p-8">
-          <Link to={routesPath.home.index}>
+          <Link to={routeNames.home}>
             <img
               src="Logo.png"
               alt="زرین مارکت"
@@ -79,7 +78,7 @@ const Login = () => {
           <div className="text-right my-3 text-sm ltr:text-left">
             <span>{t("isSignUp")}</span>
             <Link
-              to={routes.signup}
+              to={routeNames.login}
               className="text-blue-800 inline-block mx-2 font-bold"
             >
               {t("signUp")}

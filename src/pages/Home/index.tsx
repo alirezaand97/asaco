@@ -13,7 +13,6 @@ const Home = () => {
     data: products,
     error: getProductsError,
     isLoading: getProductsLoading,
-    isError,
   } = useGetProductsQuery({ page: 1, limit: 20 });
 
   const { data: banners } = useGetBannersQuery();

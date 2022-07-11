@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./style.css";
-import routes from "routers/routes";
+import routeNames from "routers/routeNames";
 import ToggleLanguage from "./ToggleLanguage";
 import NavBar from "./NavBar";
 import SearchInput from "./SearchInput";
@@ -19,7 +19,7 @@ const Header = () => {
           <NavBar />
           <SearchInput />
           <div className="flex">
-            <Link to={routes.login}>
+            <Link to={routeNames.login}>
               <IButton
                 className=" bg-primaryLight  text-secondary"
                 icon={<UserIcon fontSize="medium" />}

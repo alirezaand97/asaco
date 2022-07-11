@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "@mui/icons-material/Search";
-import routes from "routers/routes";
+import routeNames from "routers/routeNames";
 import IInput from "components/general/IInput";
 import { Formik } from "formik";
 const SearchInput = () => {
   const { t } = useTranslation();
   let navigate = useNavigate();
   const handleSearch = ({ search }: any) => {
-    navigate(routes.search.replace(":slug", search));
+    // navigate(routeNames.search.replace(":slug", search));
   };
 
   return (
