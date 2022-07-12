@@ -39,7 +39,7 @@ const Carousel: React.FC<CarouselInterface> = (props) => {
               <img
                 src={item}
                 loading="lazy"
-                className=" rounded-lg h-[460px] w-full object-cover"
+                className=" rounded-lg h-[440px] w-full object-cover"
               />
             </Link>
           </SwiperSlide>

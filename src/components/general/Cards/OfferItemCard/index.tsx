@@ -17,15 +17,21 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
 
   const {
     id,
-    title,
-    brandId,
-    categoryId,
-    galleryId,
-    price,
+    title_fa,
+    title_en,
+    images,
+    rating,
+    colors,
+    category,
+    last_questions,
+    last_comments,
+    review,
+    suggestion,
+    breadcrumb,
+    specifications,
     discount,
-    imageUrl,
-    description,
     isAvailable,
+    price
   } = product;
 
   return (
@@ -36,14 +42,14 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
         </IBadge>
       ) : null}
       <img
-        src={imageUrl}
+        src={images?.main}
         loading="lazy"
-        alt={title}
+        alt={title_fa}
         className="h-productImg w-productImg object-fill rounded-md mx-auto shadow-imgShadow my-4"
       />
    
       <div className="w-full px-6 pt-4 pb-16">
-        <h3 className="truncate text-md">{title}</h3>
+        <h3 className="truncate text-md">{title_fa}</h3>
         <div className="w-full flex  pt-2 justify-between items-center">
           <div className="text-lg font-yekanBold">
             {discount

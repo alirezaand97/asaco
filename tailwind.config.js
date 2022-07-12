@@ -24,11 +24,11 @@ module.exports = {
         center: true,
       },
       width: {
-        productImg: "220px",
+        productImg: "200px",
         logo:"150px"
       },
       height: {
-        productImg: "220px",
+        productImg: "200px",
         landing: "700px",
       
       },
