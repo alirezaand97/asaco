@@ -5,7 +5,6 @@ import "./i18n";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import routes from "./routers/routes";
 import { useTranslation } from "react-i18next";
-const MainLayout = lazy(() => import("./components/layouts/MainLayput"));
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -15,7 +14,7 @@ function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    if (i18n.language == "fa") {
+    if (i18n.language === "fa") {
       document.documentElement.dir = "rtl";
     } else {
       document.documentElement.dir = "ltr";
