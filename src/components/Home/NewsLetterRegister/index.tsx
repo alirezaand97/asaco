@@ -8,7 +8,7 @@ const NewsLetterRegister = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="container my-4 relative -bottom-36 bg-white shadow-blue-100 shadow-lg  h-[360px] flex flex-col justify-center items-center rounded-sm">
+    <div className="container my-8 -mb-36 bg-white shadow-blue-100 shadow-lg  h-[360px] flex flex-col justify-center items-center rounded-md">
       <h1 className="text-2xl mb-4 font-medium">{t("newsletterTitle")}</h1>
       <p className="text-lg mb-16 font-medium text-secondaryLight">
         {t("newsletterDesc")}
@@ -20,7 +20,7 @@ const NewsLetterRegister = () => {
         onSubmit={() => console.log("submit")}
       >
         {({ values }) => (
-          <div className="w-1/2 flex">
+          <div className="w-full lg:w-1/2 flex px-4">
             <IInput
               type="text"
               name="search"

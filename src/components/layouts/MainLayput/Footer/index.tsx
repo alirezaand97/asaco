@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-      <div className="container flex flex-col md:flex-row  pt-44 border-t">
+      <div className="container flex flex-col md:flex-row  pt-44">
         <div className="w-full md:w-1/2 p-4 leading-8">{t("about")}</div>
         <div className="w-full md:w-1/2 flex p-4">
           {headerItems.map((item, index) => (

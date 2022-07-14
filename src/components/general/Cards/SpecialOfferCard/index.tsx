@@ -4,7 +4,7 @@ interface Props {
 const SliderCatCard = ({ className, ...props }: Props) => {
   return (
     <div
-      className={` flex flex-col items-center justify-center  flex-wrap overflow-hidden mt-12 mx-3 mb-8 p-2 rounded-md text-secondary bg-white shadow-primaryShadow`}
+      className={`flex flex-col items-center justify-center  flex-wrap overflow-hidden mt-12 mx-3 mb-8 p-2 rounded-md text-secondary bg-white shadow-primaryShadow ${className}`}
     >
       <h1 className="font-yekanBold text-lg text-secondary mt-10">
         تخفیفانه شگفت انگیز

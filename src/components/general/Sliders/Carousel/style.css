@@ -1,0 +1,13 @@
+.headerCarousel .swiper{
+    padding: 0;
+}
+
+.headerCarousel .swiper-wrapper{
+margin-bottom: 0;
+}
+
+.headerCarousel .swiper-pagination-bullet-active{
+width: 24px;
+background-color: #F7A700;
+border-radius: 4px;
+}

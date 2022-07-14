@@ -5,13 +5,12 @@
   "login": "ورود",
   "signUp": "ثبت نام",
   "home": "خانه",
-  "electronics": "کالای دیجیتال",
-  "men's clothing": "لباس مردانه",
-  "women's clothing": "لباس زنانه",
-  "jewelery": "جواهرات",
-  "landingTitle": "استایل های مینیمال مردانه",
+  "mobile": "گوشی موبایل",
+  "laptop": "لپ تاپ",
+  "watch": "ساعت هوشمند",
+  "game": "پلی استیشن",
+  "landingTitle": "بهترین ها را از ما بخواهید",
   "landingCTA": "خرید",
   "send": "ارسال",
-  "date":"تاریخ",
-  "mobile":"موبایل"
+  "date":"تاریخ"
 }

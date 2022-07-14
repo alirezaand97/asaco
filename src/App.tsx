@@ -3,11 +3,9 @@ import { lazy, Suspense, useEffect } from "react";
 import "./App.css";
 import "./i18n";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import routes from "./routers/routes";
+import routes from "routers/routes";
 import { useTranslation } from "react-i18next";
 
-const Home = lazy(() => import("./pages/Home"));
-const Login = lazy(() => import("./pages/Login"));
 const Loader = lazy(() => import("components/layouts/MainLayput/Loader"));
 
 function App() {
@@ -25,8 +23,9 @@ function App() {
     <BrowserRouter>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path={routes.home.index} element={<Home />} />
-          <Route path={routes.login} element={<Login />} />
+          {routes.map((route) => (
+            <Route {...route} key={route.path} />
+          ))}
         </Routes>
       </Suspense>
     </BrowserRouter>

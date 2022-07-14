@@ -6,13 +6,11 @@
   "login": "login",
   "signUp": " signup ",
   "home": "home",
-  "electronics": "electronics",
-  "men's clothing": "men's clothing",
-  "women's clothing": "women's clothing",
-  "jewelery": "jewelery",
+  "mobile": "mobile",
+  "laptop": "laptop",
+  "watch": "watch",
+  "game": "game",
   "landingCTA": "Buy now",
   "send": "send",
-  "date":"data",
-  "mobile":"mobile"
-
+  "date":"data"
 }
