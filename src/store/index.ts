@@ -15,17 +15,26 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { setupListeners } from "@reduxjs/toolkit/query";
+import { initialState } from "./auth";
+const expireReducer = require("redux-persist-expire");
+
+const expireAuth = expireReducer(auth.name, {
+  expireSeconds: 30,
+  expiredState: initialState,
+  autoExpire: true,
+});
 
 const persistConfig = {
   key: "root",
   storage,
+  blacklist: [modals.name],
+  transforms: [expireAuth],
 };
 
 const rootReducer = combineReducers({
   [service.reducerPath]: service.reducer,
   [auth.name]: auth.reducer,
   [modals.name]: modals.reducer,
-
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -24,13 +24,15 @@ const Login = () => {
   const [login] = useLoginUserMutation();
 
   const handleLogin = (params: loginInterface) => {
-    login(params)
-      .unwrap()
-      .then((data) => {
-        dispatch(setCredentials(data));
-        Storage.set(namespace.token, data);
-        navigate("/");
-      });
+    dispatch(setCredentials({ token: "5ASDohinasCSXXasd5" }));
+
+    // login(params)
+    //   .unwrap()
+    //   .then((data) => {
+    //     dispatch(setCredentials(data));
+    //     Storage.set(namespace.token, data);
+    //     navigate("/");
+    //   });
   };
 
   return (
@@ -44,7 +46,7 @@ const Login = () => {
               password: "",
               file: [],
             }}
-            validationSchema={LoginSchema}
+            // validationSchema={LoginSchema}
             onSubmit={handleLogin}
           >
             {(props) => (

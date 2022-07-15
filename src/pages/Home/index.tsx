@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LandingHeader from "components/Home/LandingHeader";
 import NewsLetterRegister from "components/Home/NewsLetterRegister";
 import ProductSlider from "components/Product/ProductSlider";
@@ -8,7 +8,12 @@ import OfferBanner from "components/Home/OfferBanner";
 import MainLayout from "components/layouts/MainLayput";
 import SpecialOfferCard from "components/general/Cards/SpecialOfferCard";
 import SliderCatCard from "components/general/Cards/SpecialOfferCard";
+import { useAppSelector } from "store";
 const Home = () => {
+  const auth = useAppSelector((s) => s.auth);
+  useEffect(() => {
+    console.log(auth);
+  }, [auth]);
   const {
     data: products,
     error: getProductsError,
