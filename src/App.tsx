@@ -5,6 +5,7 @@ import "./i18n";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import routes from "routers/routes";
 import { useTranslation } from "react-i18next";
+import { PersistGate } from "redux-persist/integration/react";
 
 const Loader = lazy(() => import("components/layouts/MainLayput/Loader"));
 
