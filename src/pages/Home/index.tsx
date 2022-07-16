@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LandingHeader from "components/Home/LandingHeader";
 import NewsLetterRegister from "components/Home/NewsLetterRegister";
 import ProductSlider from "components/Product/ProductSlider";
@@ -11,7 +11,12 @@ import SliderCatCard from "components/general/Cards/SpecialOfferCard";
 import moment from "moment";
 import jmoment from "moment-jalaali";
 
+import { useAppSelector } from "store";
 const Home = () => {
+  const auth = useAppSelector((s) => s.auth);
+  useEffect(() => {
+    console.log(auth);
+  }, [auth]);
   const {
     data: products,
     error: getProductsError,

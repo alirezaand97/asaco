@@ -13,7 +13,7 @@ function App() {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-    if (i18n.language == "fa") {
+    if (i18n.language === "fa") {
       document.documentElement.dir = "rtl";
     } else {
       document.documentElement.dir = "ltr";

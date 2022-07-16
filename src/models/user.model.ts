@@ -5,4 +5,5 @@ export interface UserInterface {
   last_name?: string;
   avatar?: string;
   token?: string;
+  isLogedIn?:boolean
 }
