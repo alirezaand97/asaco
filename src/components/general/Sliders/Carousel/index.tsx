@@ -20,6 +20,7 @@ const Carousel: React.FC<CarouselInterface> = (props) => {
   return (
     <div className={` ${className} headerCarousel rounded-md`}>
       <Swiper
+        dir="rtl"
         effect={"fade"}
         modules={[Autoplay, Pagination]}
         slidesPerView={1}

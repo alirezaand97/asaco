@@ -8,6 +8,9 @@ import OfferBanner from "components/Home/OfferBanner";
 import MainLayout from "components/layouts/MainLayput";
 import SpecialOfferCard from "components/general/Cards/SpecialOfferCard";
 import SliderCatCard from "components/general/Cards/SpecialOfferCard";
+import moment from "moment";
+import jmoment from "moment-jalaali";
+
 const Home = () => {
   const {
     data: products,
@@ -15,6 +18,7 @@ const Home = () => {
     isLoading: getProductsLoading,
   } = useGetProductsQuery({ page: 1, limit: 20 });
 
+  console.log(moment().format('h:mm:ss a'))
   const { data: banners } = useGetBannersQuery();
 
   return (

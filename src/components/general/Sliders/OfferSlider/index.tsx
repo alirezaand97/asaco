@@ -20,7 +20,7 @@ const ProductSlider: React.FC<ProductSliderInterface> = (props) => {
     <div className={` ${className} offerSlider`}>
       <Swiper
         effect={"fade"}
-        modules={[EffectFade,Autoplay]}
+        modules={[EffectFade, Autoplay]}
         slidesPerView={1}
         spaceBetween={10}
         autoplay={{

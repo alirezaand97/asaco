@@ -34,7 +34,8 @@ const sliderConfig = {
    navigation:true,
    keyboard:{
     enabled: true,
-  }
+  },
+  dir:"rtl"
 };
 
 export default sliderConfig;
