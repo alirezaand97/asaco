@@ -31,16 +31,12 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
     specifications,
     discount,
     isAvailable,
-    price
+    price,
   } = product;
 
   return (
-    <div
-      
-      className="relative w-full p-2 pb-8 box-border shadow-primaryShadow rounded-lg bg-white"
-    >
-     
-      <div className="flex justify-center">
+    <div className="relative w-full p-2 pb-8 box-border shadow-primaryShadow rounded-lg bg-white">
+      <div className="flex justify-center pt-4">
         <img
           src={images?.main}
           loading="lazy"
@@ -48,19 +44,22 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
           className="h-productImg w-productImg"
         />
       </div>
-      {discount ? (
-        <IBadge className="absolute top-0 left-0 rounded-md w-8 h-8">
-          {persianDigit(discount)}٪
-        </IBadge>
-      ) : null}
+
       <div className="w-full px-6 pt-4">
         <h3 className="truncate text-md">{title_fa}</h3>
-        <div className="w-full flex  pt-2 justify-between items-center">
-          <div className="text-lg font-yekanBold">
-            {(discount)
-              ? persianDigit(withDiscount(price, discount))
-              : persianDigit(price)}
-            <span className="text-xs px-1 font-yekan">تومان</span>
+        <div className="h-12">
+          <div className="w-full flex pt-2 justify-between items-center">
+            {discount ? (
+              <IBadge className="rounded-md w-3 h-5">
+                {persianDigit(discount)}٪
+              </IBadge>
+            ) : null}
+            <div className="text-lg font-yekanBold">
+              {discount
+                ? persianDigit(withDiscount(price, discount))
+                : persianDigit(price)}
+              <span className="text-xs px-1 font-yekan">تومان</span>
+            </div>
           </div>
           {discount ? (
             <div className="pt-1 text-left text-xs text-slate-400 line-through">
@@ -70,22 +69,7 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
           ) : null}
         </div>
 
-        {hasAction && (
-          <div className="pt-4 flex justify-center">
-            <Link to="/" className="mx-2">
-              <IButton
-                className="bg-primaryLight text-primary h-10 w-10"
-                icon={<HeadrtIcon fontSize="small" />}
-              />
-            </Link>
-            <Link to="/" className="mx-2">
-              <IButton
-                className="bg-primaryLight  text-primary h-10 w-10"
-                icon={<CartIcon fontSize="small" />}
-              />
-            </Link>
-          </div>
-        )}
+        
       </div>
     </div>
   );
