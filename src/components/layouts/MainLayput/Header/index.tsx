@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import ToggleLanguage from "./ToggleLanguage";
 import NavBar from "./NavBar";
-import SearchInput from "./SearchInput";
+import SearchInput from "./SearchBox";
 import { useTranslation } from "react-i18next";
 
 import Logo from "components/general/Logo";

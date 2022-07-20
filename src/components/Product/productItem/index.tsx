@@ -19,6 +19,7 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
     id,
     title_fa,
     title_en,
+    
     images,
     rating,
     colors,
@@ -46,7 +47,7 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
       </div>
 
       <div className="w-full px-6 pt-4">
-        <h3 className="truncate text-md">{title_fa}</h3>
+        <h3 className="truncate text-md">{title_fa}</h3 >
         <div className="h-12">
           <div className="w-full flex pt-2 justify-between items-center">
             {discount ? (

@@ -22,6 +22,7 @@ module.exports = {
       },
       container: {
         center: true,
+        padding:'12px'
       },
       width: {
         productImg: "200px",

@@ -67,13 +67,8 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
 
         {hasAction && (
           <div className="absolute inset-x-0 bottom-0 pt-4 flex justify-center">
-            <Link to="/" className="ml-1 w-1/6">
-              <IButton
-                className="bg-primaryLight w-full text-primary h-14 rounded-none"
-                icon={<HeadrtIcon fontSize="small" />}
-              />
-            </Link>
-            <Link to="/" className="mr-1 w-5/6">
+            
+            <Link to="/" className="mr-1 w-full">
               <IButton className="bg-primaryLight w-full text-primary h-14 rounded-none">
                 افزودن به سبد خرید
               </IButton>

@@ -54,7 +54,7 @@ const ProductSlider: React.FC<ProductSliderInterface> = (props) => {
         <div className={`${hasFixItem ? "w-full md:w-5/6" : "w-full"}`}>
           <Swiper {...sliderConfig} modules={[Navigation]}>
             {products?.map((product) => (
-              <SwiperSlide>
+              <SwiperSlide key={product.id}>
                 <ProductItem product={product} />
               </SwiperSlide>
             ))}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import LandingHeader from "components/Home/LandingHeader";
 import NewsLetterRegister from "components/Home/NewsLetterRegister";
 import ProductSlider from "components/Product/ProductSlider";
@@ -10,25 +10,32 @@ import SpecialOfferCard from "components/general/Cards/SpecialOfferCard";
 import SliderCatCard from "components/general/Cards/SpecialOfferCard";
 import moment from "moment";
 import jmoment from "moment-jalaali";
-
+import { parse, stringify } from "query-string";
 import { useAppSelector } from "store";
+import { useLocation, useSearchParams } from "react-router-dom";
 const Home = () => {
-  const auth = useAppSelector((s) => s.auth);
-  useEffect(() => {
-    console.log(auth);
-  }, [auth]);
   const {
     data: products,
     error: getProductsError,
     isLoading: getProductsLoading,
-  } = useGetProductsQuery({ page: 1, limit: 20 });
+  } = useGetProductsQuery({
+    page: 1,
+    limit: 10,
+  });
 
-  console.log(moment().format('h:mm:ss a'))
   const { data: banners } = useGetBannersQuery();
 
+  const changeSex=(e:React.ChangeEvent<HTMLSelectElement>)=>{
+    console.log(e.target.value);
+  }
   return (
     <MainLayout className="mt-28 md:mt-36 lg:mt-32">
       <LandingHeader />
+      <select name="sex" onChange={changeSex}>
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="none">none</option>
+      </select>
       <div className=" container">
         <ProductSlider
           products={products}

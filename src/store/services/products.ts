@@ -3,10 +3,13 @@ import service from ".";
 
 export const productsApi = service.injectEndpoints({
   endpoints: (build) => ({
-    getProducts: build.query<Product[], { page?: number; limit?: number }>({
-      query({ page, limit }) {
+    getProducts: build.query<
+      Product[],
+      { page?: string | number; limit?: number | string | null; search?: string }
+    >({
+      query({ page, limit, search }) {
         return {
-          url: `products?_page=${page}&_limit=${limit}`,
+          url: `products?_page=${page}&_limit=${limit}&titleFa_like=${search}`,
           method: "GET",
         };
       },
@@ -15,4 +18,4 @@ export const productsApi = service.injectEndpoints({
   }),
 });
 
-export const {endpoints,useGetProductsQuery}=productsApi;
+export const { endpoints, useGetProductsQuery } = productsApi;

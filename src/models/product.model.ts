@@ -1,8 +1,8 @@
 export default interface Product {
   id?: number;
   title_fa?: string;
-  title_en?: string;
   images?: Images;
+  title_en?: string;
   rating?: Rating;
   colors?: Color[];
   category?: Category;

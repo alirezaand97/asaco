@@ -10,7 +10,7 @@ interface Props {
 }
 const MainLayout = ({
   showHeader = true,
-  showFooter = true,
+  showFooter = true, 
   className,
   ...props
 }: Props) => {

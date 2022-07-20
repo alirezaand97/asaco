@@ -34,8 +34,8 @@ const Carousel: React.FC<CarouselInterface> = (props) => {
         }}
         loop={true}
       >
-        {items?.map((item) => (
-          <SwiperSlide>
+        {items?.map((item,i) => (
+          <SwiperSlide key={i}>
             <Link to="/" className="w-full">
               <img
                 src={item}

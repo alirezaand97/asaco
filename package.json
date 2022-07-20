@@ -19,6 +19,7 @@
     "formik": "^2.2.9",
     "i18next": "^21.8.5",
     "i18next-browser-languagedetector": "^6.1.4",
+    "lodash": "^4.17.21",
     "luxon": "^2.4.0",
     "moment": "^2.29.4",
     "moment-jalaali": "^0.9.6",

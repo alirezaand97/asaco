@@ -17,8 +17,8 @@ const IInput = ({
     <div className="w-full">
       <label htmlFor={props.id || props.name}> {label}</label>
       <Field
-        {...props}
         {...field}
+        {...props}
         className={`${
           meta.error
             ? "border-red-500 placeholder:text-red-500 focus:border-red-500"
