@@ -25,7 +25,7 @@ const Login = () => {
 
   const handleLogin = (params: loginInterface) => {
     dispatch(setCredentials({ token: "5ASDohinasCSXXasd5" }));
-
+    console.log(params);
     // login(params)
     //   .unwrap()
     //   .then((data) => {
@@ -46,23 +46,27 @@ const Login = () => {
               password: "",
               file: [],
             }}
-            // validationSchema={LoginSchema}
+            validationSchema={LoginSchema}
             onSubmit={handleLogin}
           >
-            {(props) => (
+            {({handleChange,errors}) => (
               <Form>
                 <IInput
                   type="email"
                   name="email"
                   className="my-4"
                   placeholder={t("email")}
+                  onChange={handleChange}
+                  error={errors.email}
                 />
                 <IInput
                   type="password"
                   name="password"
                   className="my-4"
                   placeholder={t("password")}
-                />
+                  onChange={handleChange}
+                  error={errors.email}      
+                            />
                 <IButton
                   type="submit"
                   className="w-full mt-12 bg-primary text-white  rounded-md"

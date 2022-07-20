@@ -13,6 +13,7 @@ import jmoment from "moment-jalaali";
 import { parse, stringify } from "query-string";
 import { useAppSelector } from "store";
 import { useLocation, useSearchParams } from "react-router-dom";
+import ISelect from "components/general/ISelect";
 const Home = () => {
   const {
     data: products,
@@ -31,11 +32,7 @@ const Home = () => {
   return (
     <MainLayout className="mt-28 md:mt-36 lg:mt-32">
       <LandingHeader />
-      <select name="sex" onChange={changeSex}>
-        <option value="male">male</option>
-        <option value="female">female</option>
-        <option value="none">none</option>
-      </select>
+     <ISelect onChange={changeSex} name="sex" options={[{value:'male',label:'male'},{value:'female  ',label:'female '}]}/>
       <div className=" container">
         <ProductSlider
           products={products}

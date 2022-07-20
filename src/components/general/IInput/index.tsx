@@ -1,26 +1,26 @@
-import React, { useEffect } from "react";
+import React, { InputHTMLAttributes} from "react";
 import { useField, FieldHookConfig, Field, ErrorMessage } from "formik";
 
-interface otherProps {
+interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   className?: string;
+  error?:string
 }
 
 const IInput = ({
   label,
   className,
+  error,
   ...props
-}: otherProps & FieldHookConfig<string>) => {
-  const [field, meta] = useField(props);
+}: Props) => {
 
   return (
     <div className="w-full">
       <label htmlFor={props.id || props.name}> {label}</label>
-      <Field
-        {...field}
+      <input
         {...props}
         className={`${
-          meta.error
+          error
             ? "border-red-500 placeholder:text-red-500 focus:border-red-500"
             : ""
         } flex items-center h-12 px-4 w-full text-right ltr:text-left border focus:border-primary  placeholder:text-sm rounded-md  focus:bg-white  focus:shadow-md focus:outline-none   placeholder:ltr:text-left
@@ -28,7 +28,7 @@ const IInput = ({
         `}
       />
       <span className="block w-full text-sm text-red-500">
-        <ErrorMessage name={props.name} />
+        {error}
       </span>
     </div>
   );
