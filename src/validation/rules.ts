@@ -19,15 +19,14 @@ const numberPasswordRegex = /(?=.*?[0-9])/;
 const specialCharPassRegex = /(?=.*?[#?!@$%^&*-])/;
 const passwordRegex = /^(?=.*[A-Z])(?=.*[\W])(?=.*[0-9])(?=.*[a-z]).{8,}$/g;
 
-
 export const username = Yup.string().label("username").required(requireMessage);
 
 export const password = (label: string, isRequire = false) => {
   return Yup.string()
     .label(label)
-    .matches(passwordRegex, incorrectFormat('password'))
+    .matches(passwordRegex, incorrectFormat("password"))
     .required(requireMessage);
-}; 
+};
 
 export const mobileNumber = Yup.string()
   .label("mobileNumber")
@@ -46,9 +45,6 @@ export const email = (label: string, isRequire?: boolean) => {
   }
 };
 
-
-
-
 export const date = (label: string, isRequire = false) => {
   if (isRequire) {
     return Yup.date()
@@ -65,3 +61,18 @@ export const genderTypeId = Yup.number()
   .typeError(requireMessage)
   .label("genderTypeId")
   .required(requireMessage);
+
+const FILE_SIZE: number = 1;
+const SUPPORTED_FORMATS: { type: string }[] = [];
+export const Image = Yup.mixed()
+  .required("A file is required")
+  .test(
+    "fileSize",
+    "File too large",
+    (value: { size: number }) => value && value.size <= FILE_SIZE
+  )
+  .test(
+    "fileFormat",
+    "Unsupported Format",
+    (value) => value && SUPPORTED_FORMATS.includes(value.type)
+  );

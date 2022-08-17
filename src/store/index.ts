@@ -17,6 +17,7 @@ import {
 } from "redux-persist";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { initialState } from "./auth";
+import { rtkQueryErrorLogger } from "utils/rtkqErrorLogger";
 const expireReducer = require("redux-persist-expire");
 
 const expireAuth = expireReducer(auth.name, {
@@ -28,7 +29,7 @@ const expireAuth = expireReducer(auth.name, {
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: [modals.name],
+  blacklist: [modals.name,service.reducerPath],
   transforms: [expireAuth],
 };
 
@@ -47,7 +48,7 @@ const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }).concat(service.middleware),
+    }).concat(service.middleware,rtkQueryErrorLogger),
 });
 
 export const persistor = persistStore(store);
@@ -62,3 +63,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 setupListeners(store.dispatch);
 
 export default store;
+
+
+
+

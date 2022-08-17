@@ -31,14 +31,14 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
     specifications,
     discount,
     isAvailable,
-    price
+    price,
   } = product;
 
   return (
     <div className="relative w-full p-2 pb-8 pt-10 box-border  rounded-lg bg-white overflow-hidden z-[2] ">
       {discount ? (
         <IBadge className="absolute top-0 inset-x-0 text-lg  rounded-t-md rounded-b-none h-20 -z-[1] bg-primaryLight text-primary ">
-           {persianDigit(discount)}٪ تخفیف
+          {persianDigit(discount)}٪ تخفیف
         </IBadge>
       ) : null}
       <img
@@ -47,7 +47,7 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
         alt={title_fa}
         className="h-productImg w-productImg object-fill rounded-md mx-auto shadow-imgShadow my-4"
       />
-   
+
       <div className="w-full px-6 pt-4 pb-16">
         <h3 className="truncate text-md">{title_fa}</h3>
         <div className="w-full flex  pt-2 justify-between items-center">
@@ -67,7 +67,6 @@ const ProductItem: React.FC<ProductInterface> = (props) => {
 
         {hasAction && (
           <div className="absolute inset-x-0 bottom-0 pt-4 flex justify-center">
-            
             <Link to="/" className="mr-1 w-full">
               <IButton className="bg-primaryLight w-full text-primary h-14 rounded-none">
                 افزودن به سبد خرید

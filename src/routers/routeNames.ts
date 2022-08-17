@@ -1,7 +1,7 @@
 const routeNames = {
   home: "/",
   login: "/login",
-  product: "/product/:id",
+  product: "/product",
 };
 
 export default routeNames;

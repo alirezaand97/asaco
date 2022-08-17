@@ -15,24 +15,53 @@ import { useAppDispatch } from "store";
 import IButton from "components/general/IButton";
 import MainLayout from "components/layouts/MainLayput";
 import Logo from "components/general/Logo";
+import "./style.css";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   let navigate = useNavigate();
+  const store = useSelector((state: any) => state.auth);
+
+
+  console.log(store)
+
+  const [formValues, setformValues] = useState({
+    email: "alireza@gmail.com",
+    password: "@Aa123456",
+  });
+  useEffect(() => {
+    // setTimeout(() => {
+    setformValues({ email: "alireza@gmail.com", password: "@Aa123456" });
+    // }, 3000);
+  }, []);
 
   const [login] = useLoginUserMutation();
 
-  const handleLogin = (params: loginInterface) => {
+  const handleLogin = (params: loginInterface, actions: any) => {
     dispatch(setCredentials({ token: "5ASDohinasCSXXasd5" }));
-    console.log(params);
-    // login(params)
-    //   .unwrap()
-    //   .then((data) => {
-    //     dispatch(setCredentials(data));
-    //     Storage.set(namespace.token, data);
-    //     navigate("/");
-    //   });
+
+    login(params)
+      .unwrap()
+      .then((data) => {
+        dispatch(setCredentials(data));
+        Storage.set(namespace.token, data);
+        navigate("/");
+      });
+  };
+
+  const [profile, setProfile] = useState<string | ArrayBuffer | null>();
+
+  const imageHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (reader.readyState === 2) {
+        setProfile(reader.result);
+      }
+    };
+    reader.readAsDataURL(e.target.files[0]);
   };
 
   return (
@@ -42,15 +71,31 @@ const Login = () => {
           <Logo className="mx-auto mb-12" />
           <Formik
             initialValues={{
-              email: "",
-              password: "",
-              file: [],
+              email: "alireza@gmail.com",
+              password: "@Aa123456",
             }}
             validationSchema={LoginSchema}
-            onSubmit={handleLogin}
+            enableReinitialize
+            onSubmit={
+              (values, { setErrors }) => {
+                console.log(values);
+              }
+              // setErrors({ email: "email error", password: "password error" })
+            }
+            validateOnChange={true}
+            validateOnBlur={true}
+            validateOnMount={true}
           >
-            {({handleChange,errors}) => (
+            {({ handleChange, errors, values }) => (
               <Form>
+                <input
+                  type="file"
+                  accept="image/*"
+                  name="image-upload"
+                  id="input"
+                  onChange={imageHandler}
+                />
+
                 <IInput
                   type="email"
                   name="email"
@@ -58,6 +103,7 @@ const Login = () => {
                   placeholder={t("email")}
                   onChange={handleChange}
                   error={errors.email}
+                  value={values.email}
                 />
                 <IInput
                   type="password"
@@ -65,8 +111,11 @@ const Login = () => {
                   className="my-4"
                   placeholder={t("password")}
                   onChange={handleChange}
-                  error={errors.email}      
-                            />
+                  error={errors.password}
+                  value={values.password}
+                />
+
+                <ReCAPTCHA sitekey="6LdMEhchAAAAAIrww0fl32K9-ONiFEEqyly6JRZS" />
                 <IButton
                   type="submit"
                   className="w-full mt-12 bg-primary text-white  rounded-md"

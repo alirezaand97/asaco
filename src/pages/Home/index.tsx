@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
+import {
+  default as SliderCatCard,
+  default as SpecialOfferCard,
+} from "components/general/Cards/SpecialOfferCard";
 import LandingHeader from "components/Home/LandingHeader";
 import NewsLetterRegister from "components/Home/NewsLetterRegister";
-import ProductSlider from "components/Product/ProductSlider";
-import { useGetProductsQuery } from "store/services/products";
-import { useGetBannersQuery } from "store/services/general";
 import OfferBanner from "components/Home/OfferBanner";
 import MainLayout from "components/layouts/MainLayput";
-import SpecialOfferCard from "components/general/Cards/SpecialOfferCard";
-import SliderCatCard from "components/general/Cards/SpecialOfferCard";
-import moment from "moment";
-import jmoment from "moment-jalaali";
-import { parse, stringify } from "query-string";
-import { useAppSelector } from "store";
-import { useLocation, useSearchParams } from "react-router-dom";
-import ISelect from "components/general/ISelect";
+import ProductSlider from "components/Product/ProductSlider";
+import { useGetBannersQuery } from "store/services/general";
+import { useGetProductsQuery } from "store/services/products";
+import ISelect from "components/general/ISelect/Select";
+import IPinInput, { ResendOTP } from "components/general/IPinInput";
+
 const Home = () => {
   const {
     data: products,
@@ -23,16 +22,38 @@ const Home = () => {
     page: 1,
     limit: 10,
   });
+  const [OTP, setOTP] = useState("");
 
+  useEffect(() => {
+    console.log(OTP)
+    
+  }, [OTP])
+  
+
+  const [selected, setselected] = useState(null);
+  const options = [
+    { value: "gilan", label: "گیلان" },
+    { value: "tehran", label: "تهران" },
+    { value: "yazd", label: "یزد" },
+    { value: "ghazvin", label: "قزوین" },
+    { value: "kerman", label: "کرمان" },
+    { value: "mashhad", label: "مشهد" },
+    { value: "karaj", label: "کرج" },
+    { value: "bushehr", label: "بوشهر" },
+  ];
   const { data: banners } = useGetBannersQuery();
 
-  const changeSex=(e:React.ChangeEvent<HTMLSelectElement>)=>{
+  const handleChangeSelect = (value: any) => {
+    console.log(value);
+    setselected(value);
+  };
+
+  const changeSex = (e: React.ChangeEvent<HTMLSelectElement>) => {
     console.log(e.target.value);
-  }
+  };
   return (
     <MainLayout className="mt-28 md:mt-36 lg:mt-32">
       <LandingHeader />
-     <ISelect onChange={changeSex} name="sex" options={[{value:'male',label:'male'},{value:'female  ',label:'female '}]}/>
       <div className=" container">
         <ProductSlider
           products={products}
@@ -46,6 +67,30 @@ const Home = () => {
           fixItem={<SpecialOfferCard className="w-full md:w-1/5" />}
         />
         {banners && <OfferBanner banners={banners} />}
+
+        {/* <IPinInput
+          value={OTP}
+          onChange={setOTP}
+          autoFocus
+          OTPLength={6}
+          otpType="string"
+          disabled={false}
+          inputClassName="w-12 h-12 border-primary"
+        /> */}
+        {/* <ResendOTP
+          timeInterval={1000}
+          maxTime={60}
+          onTimerComplete={() => console.log("completed")}
+          onResendClick={() => console.log("completed")}
+        /> */}
+        <div className="w-[360px]">
+          <ISelect
+            value={selected}
+            onChange={handleChangeSelect}
+            options={options}
+            isMultiple={true}
+          />
+        </div>
         <ProductSlider
           products={products}
           title="کالاهای دیجیتال"
